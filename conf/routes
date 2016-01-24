@@ -1,0 +1,2 @@
+# Standard
+GET /standard/message controllers.MessageController.index
