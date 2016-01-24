@@ -1,5 +1,7 @@
 package services
 
-class MessageService() {
-  def index = "hello world"
+import models.MessageDao
+
+class MessageService(dao: MessageDao) {
+  def index() = dao.findList()
 }
