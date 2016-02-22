@@ -4,7 +4,6 @@ import play.api.{Logger, BuiltInComponents, BuiltInComponentsFromContext}
 import play.api.routing.Router
 import router.Routes
 import com.softwaremill.macwire._
-import com.softwaremill.macwire.aop.ProxyingInterceptor
 
 import components.MessageComponent
 
@@ -21,11 +20,6 @@ class ApplicationLoaderImpl extends ApplicationLoader {
 }
 
 class AppComponents(context: Context) extends BuiltInComponentsFromContext(context) with MessageComponent {
-
-  lazy val logEvents = ProxyingInterceptor { ctx =>
-    println("Calling method: " + ctx.method.getName())
-    ctx.proceed()
-  }
 
   lazy val router: Router = {
     lazy val prefix = "/"

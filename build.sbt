@@ -9,7 +9,6 @@ lazy val root = (project in file("."))
 
 libraryDependencies ++= Seq(
   "com.softwaremill.macwire" %% "macros" % "2.2.2" % "provided",
-  "com.softwaremill.macwire" %% "proxy" % "2.2.2",
   "com.softwaremill.macwire" %% "util"   % "2.2.2"
 )
 
